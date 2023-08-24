@@ -1,0 +1,23 @@
+ Søg efter et bestemt tilfældigt tal, fx 4711
+SELECT * FROM Random;
+Where RandomNumbers = 4711;
+
+
+ Lav en oversigt over alle de tilfældige tal og hvor mange gange de hver især forekommer, sorteret
+efter de tilfældige tal (dette kan også benyttes som et VIEW til løsning af de næste forespørgsler)
+SELECT RandomNumber, COUNT(RandomNumber) as 'Counted'
+FROM Random
+GROUP BY RandomNumber
+ORDER BY RandomNumber;
+
+ Find hvor mange gange det eller de sjældneste tilfældige tal forekommer
+SELECT RandomNumber, COUNT(RandomNumber) as 'Counted'
+FROM Random
+GROUP BY RandomNumber
+ORDER BY Counted;
+
+ Find hvor mange gange det eller de hyppigste tilfældige tal forekommer
+SELECT RandomNumber, COUNT(RandomNumber) as 'Counted'
+FROM Random
+GROUP BY RandomNumber
+ORDER BY Counted desc;
